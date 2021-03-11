@@ -56,4 +56,14 @@ RSpec.describe do
       expect(machine.refund).to eq 500
     end
   end
+  describe '購入確認' do
+    let(:machine) {BendingMachine.new}
+    it "コーラが購入できる" do
+      machine.input(500)
+      expect(machine.buyable).to eq true
+    end
+    it "コーラが購入できない" do
+      expect(machine.buyable).to eq false
+    end
+  end
 end
