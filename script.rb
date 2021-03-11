@@ -6,11 +6,23 @@ class Sample
   end
 end
 
+class Product
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+  def name
+    @name
+  end
+  def price
+    @price
+  end
+end
+
 class BendingMachine
   def initialize
     @totalAmount = 0
-    @name = "コーラ"
-    @price = 120
+    @product = Product.new("コーラ", 120)
     @num = 5
   end
   def input(money)
@@ -27,6 +39,6 @@ class BendingMachine
     return total
   end
   def stock
-    return {"name" => @name, "price" => @price, "num" => @num}
+    return {"name" => @product.name, "price" => @product.price, "num" => @num}
   end
 end
