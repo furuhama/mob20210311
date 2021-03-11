@@ -25,11 +25,28 @@ RSpec.describe do
       it 'input' do
         expect{machine.input(str)}.not_to change{
           machine.sum_value
-        }.by(1000)
+        }
       end
 
       it 'return value' do
-        expect(machine.input(str)).to eq nil
+        expect(machine.input(str)).to eq str
+      end
+    end
+
+    context '払い戻し' do
+      let(:str) { '-1' }
+      let(:sum) { '1500' }
+
+      before do
+        machine.input('1000')
+        machine.input('500')
+      end
+
+      it 'return value' do
+        expect(machine.input(str)).to eq sum
+      end
+
+      it '' do
       end
     end
   end
