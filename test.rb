@@ -4,8 +4,8 @@ require_relative 'script'
 
 RSpec.describe do
   
-  describe 'Vending Machine' do
-    let(:machine) { VendingMachine.new() }
+  let(:machine) { VendingMachine.new() }
+  describe 'VendingMachine#input' do
     let(:str) { 'hoge' }
     context '想定内のお金' do
       let(:str) { '1000' }
@@ -46,8 +46,16 @@ RSpec.describe do
         expect(machine.input(str)).to eq sum
       end
 
-      it '' do
+      it 'reset sum value' do
+        machine.input(str)
+        expect(machine.sum_value).to eq 0
       end
+    end
+  end
+
+  describe 'VendingMachine#sum_value' do
+    it 'return sum_value' do
+      expect(machine.sum_value).to eq 0
     end
   end
 end

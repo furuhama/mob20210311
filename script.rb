@@ -12,7 +12,9 @@ class VendingMachine
       self.sum_value += str.to_i
       nil
     elsif str == '-1'
-      sum_value.to_s
+      sum_str = sum_value.to_s
+      self.sum_value = 0
+      sum_str
     else
       str
     end
