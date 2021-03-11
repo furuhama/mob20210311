@@ -20,13 +20,14 @@ class Product
 end
 
 class BendingMachine
+  AVAILABLE_MONEYS = [10, 50, 100, 500, 1000]
   def initialize
     @totalAmount = 0
     @product = Product.new("コーラ", 120)
     @num = 5
   end
   def input(money)
-    if [10, 50, 100, 500, 1000].include?(money)
+    if AVAILABLE_MONEYS.include?(money)
       @totalAmount += money
     end
   end

@@ -7,7 +7,6 @@ RSpec.describe do
   #  it { expect(Sample.perfect_answer).to eq 42 }
   # end
 
-  
   describe '初期状態' do
     let(:machine) {BendingMachine.new}
     it 'ジュースの格納' do
