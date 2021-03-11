@@ -1,11 +1,20 @@
 # frozen_string_literal: true
 
 require_relative 'script'
+require "rspec/json_matcher"
 
 RSpec.describe do
   # describe 'Sample' do
   #  it { expect(Sample.perfect_answer).to eq 42 }
   # end
+
+  describe '初期状態' do 
+    let(:machine) {BendingMachine.new}
+    it 'ジュースの格納' do
+      expect(machine.stock).to eq {name: 'コーラ', price: 120, num: 5}.to_json
+    end
+  end
+
   # 硬貨の種類？
   describe 'お金の投入' do
     let(:machine) {BendingMachine.new}
