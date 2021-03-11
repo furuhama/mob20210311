@@ -2,9 +2,11 @@
 
 class VendingMachine
   attr_accessor :sum_value
+  attr_accessor :juices
 
   def initialize
     self.sum_value = 0
+    self.juices = []
   end
 
   def input(str)
@@ -18,5 +20,14 @@ class VendingMachine
     else
       str
     end
+  end
+
+  def input_juice(juice)
+    self.juices << juice
+  end
+end
+
+class Juice
+  def initialize(name:, price:)
   end
 end

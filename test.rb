@@ -58,4 +58,24 @@ RSpec.describe do
       expect(machine.sum_value).to eq 0
     end
   end
+
+  describe 'VendingMachine#input_juice' do
+    let(:juice) { Juice.new(name: 'サイダー', price: 100) }
+    it '' do
+      expect{machine.input_juice(juice)}.to change {
+        machine.juices
+      }.to([juice])
+    end
+  end
+
+  describe 'VendingMachine#juices' do
+    let(:coke) { Juice.new(name: 'コーラ', price: 120) }
+    it do
+      machine.juices.each do |juice|
+        expect(juice).to eq coke
+      end
+    end
+  end
 end
+
+
