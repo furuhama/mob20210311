@@ -40,12 +40,12 @@ RSpec.describe do
 
     it '投入金額が0になる' do
       machine.input(500)
-      machine.output
+      machine.refund
       expect(machine.dispAmount).to eq 0
     end
     it '釣り銭を出力' do
       machine.input(500)
-      expect(machine.output).to eq 500
+      expect(machine.refund).to eq 500
     end
   end
 end

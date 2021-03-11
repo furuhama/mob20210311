@@ -18,7 +18,7 @@ class BendingMachine
   def dispAmount
     return @totalAmount
   end
-  def output
+  def refund
     total = @totalAmount
     @totalAmount = 0
     return total
