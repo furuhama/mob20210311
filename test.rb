@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
 require_relative 'script'
-require "rspec/json_matcher"
 
 RSpec.describe do
   # describe 'Sample' do
   #  it { expect(Sample.perfect_answer).to eq 42 }
   # end
 
-  describe '初期状態' do 
+  describe '初期状態' do
     let(:machine) {BendingMachine.new}
     it 'ジュースの格納' do
-      expect(machine.stock).to eq {name: 'コーラ', price: 120, num: 5}.to_json
+      expect(machine.stock.to_s).to eq '{"name"=>"コーラ", "price"=>120, "num"=>5}'
     end
   end
 
@@ -43,7 +42,7 @@ RSpec.describe do
     end
   end
   # 払い戻しの時は払戻という文字列が入力されるのか？ -> 0とする?
-  # 
+  #
   describe '払い戻し' do
     let(:machine) {BendingMachine.new}
 

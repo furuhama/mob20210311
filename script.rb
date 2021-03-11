@@ -9,6 +9,9 @@ end
 class BendingMachine
   def initialize
     @totalAmount = 0
+    @name = "コーラ"
+    @price = 120
+    @num = 5
   end
   def input(money)
     if [10, 50, 100, 500, 1000].include?(money)
@@ -22,5 +25,8 @@ class BendingMachine
     total = @totalAmount
     @totalAmount = 0
     return total
+  end
+  def stock
+    return {"name" => @name, "price" => @price, "num" => @num}
   end
 end
